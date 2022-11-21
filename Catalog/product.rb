@@ -4,9 +4,9 @@ module Onliner
     class Product 
       attr_reader :name, :price, :manufacturer
       def initialize(name, price, manufacturer)
-          @name = name.to_s
-          @price = price.to_i
-          @manufacturer = manufacturer.to_s
+          @name = name
+          @price = price
+          @manufacturer = manufacturer
       end
     end
   end
