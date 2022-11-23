@@ -13,33 +13,34 @@ module Onliner
       end
 
       def search_by_name(name)
-        @catalog.select do |nameCatalogs|
-          if nameCatalogs.name == name
+        @catalog.select do |product|
+          if product.name.include?(name)
             p "Имя #{name} есть в списке"
-          else
-            p "Имя #{name} нет есть в списке"
+          else 
+            p "Имени #{name} нет в списке"
           end
         end
       end
 
       def search_by_price(max_price)
         @catalog.select do |product|
-          product.price >= max_price.price
+          if product.price <= max_price
+            p "Нашелся продук с подходящим прайсом #{product.price}"
+          else 
+            p "Не нашелся продук с подходящим прайсом"
+          end
         end
       end
 
       def search_by_manufacturer(manufacturer)
         @catalog.select do |manufacturerCatalogs|
-          if manufacturerCatalogs.manufacturer == manufacturer
-            p "Компания #{manufacturer} есть в списке"
-          else
-            p "Компании #{manufacturer} нет есть в списке"
+          if manufacturerCatalogs.manufacturer.include?(manufacturer)
+            p "Имя #{manufacturer} есть в списке"
+          else 
+            p "Имени #{manufacturer} нет в списке"
           end
         end
       end
     end
   end
 end
-
-
-
