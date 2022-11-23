@@ -13,5 +13,6 @@ module Onliner
 
     products_catalog.search_by_manufacturer("Apple")
     products_catalog.search_by_name("Govno")
+    products_catalog.search_by_price(25)
   end
 end
